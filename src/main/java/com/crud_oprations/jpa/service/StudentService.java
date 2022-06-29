@@ -5,6 +5,17 @@ import com.crud_oprations.jpa.model.Student;
 import java.util.List;
 
 public interface StudentService {
-    List<Student> findByName(String name);
+
     void saveStudent(Student student );
+
+    List<Student> findByNameContainingIgnoreCase(String name);
+
+    List<Student> findByNameAndCityContainingIgnoreCase(String name,String city);
+
+    List<Student>findAllStudent();
+    List<Student> saveAllStudent(List<Student> studentList);
+
+    void deleteStudent(Long id);
+
+
 }
