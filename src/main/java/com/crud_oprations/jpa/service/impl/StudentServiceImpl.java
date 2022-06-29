@@ -16,8 +16,26 @@ public class StudentServiceImpl implements StudentService {
 
 
     @Override
-    public List<Student> findByName(String name) {
-        return studentRepository.findByName(name);
+    public List<Student> findByNameAndCityContainingIgnoreCase(String name, String city) {
+        return studentRepository.findByNameAndCityContainingIgnoreCase(name, city);
+    }
+
+    @Override
+    public List<Student> findAllStudent() {
+        return this.studentRepository.findAll();
+    }
+
+    @Override
+    public List<Student> saveAllStudent(List<Student> studentList) {
+        this.studentRepository.saveAll(studentList);
+
+        return studentList;
+    }
+
+    @Override
+    public void deleteStudent(Long id) {
+        this.studentRepository.deleteById(id);
+
     }
 
     @Override
@@ -25,4 +43,10 @@ public class StudentServiceImpl implements StudentService {
         this.studentRepository.save(student);
 
     }
+
+    @Override
+    public List<Student> findByNameContainingIgnoreCase(String name) {
+        return this.studentRepository.findByNameContainingIgnoreCase(name);
+    }
+
 }

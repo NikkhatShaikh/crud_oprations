@@ -9,7 +9,8 @@ import java.util.Optional;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Long> {
-       List<Student> findByName(String name);
+       List<Student> findByNameContainingIgnoreCase(String name);
+       List<Student>findByNameAndCityContainingIgnoreCase(String name,String city);
 
 
 }
