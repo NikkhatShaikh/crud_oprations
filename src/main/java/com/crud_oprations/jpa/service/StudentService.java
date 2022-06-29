@@ -10,7 +10,7 @@ public interface StudentService {
 
     List<Student> findByNameContainingIgnoreCase(String name);
 
-    List<Student> findByNameAndCityContainingIgnoreCase(String name, String city);
+    List<Student> findByNameAndCityContainingIgnoreCase(String name,String city);
 
     List<Student>findAllStudent();
     List<Student> saveAllStudent(List<Student> studentList);
